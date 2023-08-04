@@ -3,7 +3,7 @@ import React from "react";
 function Faq(props: any) {
   return (
     <div className="bg-white">
-      <section className="mb-32 mx-auto w-full md:w-2/3">
+      <section className="mx-auto w-full md:w-2/3">
         <div className="max-w-[900px] text-center ">
           <h2 className="mb-6  text-xl font-primary font-semibold text-slate-900">
             Pertanyaan Seputar<br/>
