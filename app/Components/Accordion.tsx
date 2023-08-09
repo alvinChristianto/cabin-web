@@ -5,19 +5,29 @@ import { Accordion } from "flowbite-react";
 export default function AccordionFaq() {
   const data = [
     {
-      title: "Apa itu The Cabin ? ",
+      title: "Apa itu The Cabin Hotel ? ",
       content:
         "The cabin adalah jaringan hotel yang tersebar di wilayah Yogyakarta, yang menyediakan layanan penginapan dengan fasilitas terbaik dan terlengkap",
     },
     {
-      title: "Apa saja cabang The Cabin ? ",
+      title: "Apa Perbedaan The Cabin Hotel dengan hotel pada umumnya ? ",
       content:
-        "The Cabin mempunyai 20 cabang yang tersebar di wilayah Yogyakarta dan Wonosobo.",
+        "The Cabin mengedepankan konsep kemudahan menginap, yaitu dengan Check In Check Out Freely!. Selain itu pelayanan yang ramah dan fasilitas terbaik selalu kami berikan kepada Pelanggan",
     },
     {
-      title: "Bagaimana cara untuk reservasi kamar di The Cabin ? ",
+      title: "Apa itu Check In Check Out Freely ? ",
       content:
-        "Reservasi kamar di The Cabin, sangat mudah dengan melalui OTA seperti booking.com, Traveloka, Agoda dan lainnya. pelanggan juga bisa melakukan reservasi dengan datang langsung ke cabang The Cabin terdekat. ",
+        "Suatu konsep dimana user bebas melakukan check in dan check out di jam berapa saja !, Tidak terikat aturan konvensional hotel.  ",
+    },
+    {
+      title: "Bagaimana cara reservasi kamar di The Cabin Hotel Group ? ",
+      content:
+        "Reservasi kamar di The Cabin, sangat mudah dengan melalui OTA seperti booking.com, Traveloka, Agoda dan lainnya. Pelanggan juga bisa melakukan reservasi dengan datang langsung ke cabang The Cabin terdekat. ",
+    },
+    {
+      title: "Bolehkan membawa hewan peliharaan ke dalam kamar ?  ",
+      content:
+        "Kami tidak memperbolehkan hewan peliharaan untuk ikut masuk ke area Hotel. Meskipun begitu, kami dapat membantu mencarikan penitipan hewan peliharaan terdekat ",
     },
   ];
 
@@ -25,11 +35,11 @@ export default function AccordionFaq() {
     <div className="px-5">
       <Accordion>
         {data.map((item, index) => (
-          <Accordion.Panel>
-            <div key={index}>
-              <Accordion.Title>{item.title}</Accordion.Title>
+          <Accordion.Panel key={index}>
+            <div >
+              <Accordion.Title className="text-primary font-semibold">{item.title}</Accordion.Title>
               <Accordion.Content>
-                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                <p className="mb-2 text-gray-500 dark:text-slate-700">
                   {item.content}
                 </p>
               </Accordion.Content>

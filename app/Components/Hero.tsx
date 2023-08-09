@@ -1,5 +1,4 @@
 import React from "react";
-import CarouselImageHero from "./Carousel";
 import Image from "next/image";
 import Room from "../../public/img/room1.png";
 import Carousel1 from "./Carousel1";
@@ -17,7 +16,9 @@ function Hero(props: any) {
               </h1>
               <h2 className="mt-0 mb-10 text-2xl font-primary font-semibold  md:text-3xl  text-[hsl(218,81%,95%)] ">
                 Check in Check out
-                <span className="text-primary uppercase font-bold text-3xl md:text-3xl  ">
+                {/* use https://tailwindcss.com/docs/background-clip */}
+                {/* uppercase  font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 md:text-3xl */}
+                <span className="text-primary text-3xl   ">
                   {" "}
                  Freely !
                  </span>

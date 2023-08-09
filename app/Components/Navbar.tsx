@@ -1,11 +1,25 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "../../public/img/koala_logo.png"
+import logo from "../../public/img/koala_logo.png";
+import Link from "next/link";
 
 function Navbar(props: any) {
   const [open, setOpen] = useState(false);
   const [profile, setProfile] = useState(false);
+
+  const NavList = [
+    { title: "About", linkTo: "/about" },
+    { title: "Testimonial", linkTo: "/testimonials" },
+    { title: "Blog", linkTo: "/blog" },
+    { title: "Promo", linkTo: "/promo" },
+  ];
+
+  const ProfileMenuList = [
+    { title: "Dashboard", linkTo: "/profile" },
+    { title: "Settings", linkTo: "/profile/settings" },
+    { title: "Logout", linkTo: "/" },
+  ];
 
   const handleClickMenu = () => {
     setOpen(!open);
@@ -19,19 +33,13 @@ function Navbar(props: any) {
     <div>
       <nav className="bg-gray-900 border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="/" className="flex items-center">
-            <Image
-              src={logo}
-              width={40}
-              height={30}
-              alt="the cabin logo"
-            />
-           
+          <Link href="/" className="flex items-center">
+            <Image src={logo} width={40} height={30} alt="the cabin logo" />
+
             <span className="self-center text-2xl font-semibold font-primary whitespace-nowrap dark:text-white">
               The Cabin
             </span>
-          </a>
-
+          </Link>
 
           <div className="flex items-center md:order-2">
             <button
@@ -44,11 +52,14 @@ function Navbar(props: any) {
               onClick={handleClickProfile}
             >
               <span className="sr-only">Open user menu</span>
-              <img
-                className="w-8 h-8 rounded-full"
+              <div className="w-8 h-8 rounded-full">
+                <Image src={logo} width={40} height={30} alt="the cabin logo" />
+              </div>
+              {/* <img
+                className=""
                 src="/docs/images/people/profile-picture-3.jpg"
                 alt="user photo"
-              />
+              /> */}
             </button>
             <div
               className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 transform translate-x-36 translate-y-16 mobm:translate-x-40 mobl:translate-x-52 md:translate-x-96 ${
@@ -72,42 +83,19 @@ function Navbar(props: any) {
                 </span>
               </div>
               <ul className="py-2" aria-labelledby="user-menu-button">
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                    Earnings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  >
-                    Sign out
-                  </a>
-                </li>
+                {ProfileMenuList.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.title}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            
             <button
               data-collapse-toggle="navbar-user"
               type="button"
@@ -134,7 +122,7 @@ function Navbar(props: any) {
               </svg>
             </button>
           </div>
-          
+
           <div
             className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
               open ? "" : "hidden"
@@ -142,40 +130,17 @@ function Navbar(props: any) {
             id="navbar-user"
           >
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 font-secondary text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 font-secondary text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 font-secondary  text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Services
-                </a>
-              </li>
-              
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 font-secondary  text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Contact
-                </a>
-              </li>
+              {NavList.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.linkTo}
+                    className="block py-2 pl-3 pr-4 font-primary text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    aria-current="page"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
