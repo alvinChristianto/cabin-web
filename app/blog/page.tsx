@@ -35,14 +35,13 @@ export default function IndexPage() {
           />
         </div>
 
-        <div className="bg-white flex justify-center">
+        <div className="bg-white dark:bg-slate-300  flex justify-center">
           <div className="max-w-[700px] text-center mb-4">
-            <h2 className="mb-6 mt-6 font-primary text-primary text-5xl font-bold">
+            <h2 className="mb-6 mt-6 font-primary text-primary text-3xl md:text-5xl font-bold">
               The Cabin Story
             </h2>
-            <p className="mb-2 font-secondary text-neutral-500 dark:text-neutral-300  text-sm md:text-md leading-relaxed">
-              mb-2 font-secondary text-neutral-500 dark:text-neutral-300
-              leading-loose Lorem ipsum dolor sit amet consectetur adipisicing
+            <p className="mb-2 font-secondary text-neutral-500 dark:text-neutral-800 text-sm leading-loose ">
+               Lorem ipsum dolor sit amet consectetur adipisicing
               elit. Rerum natus placeat quidem, ab impedit architecto
               repellendus uterum natus placeat quidem, ab impedit architecto
               repellendus ut voluptatibus harum quas? Similique aperiam
@@ -50,13 +49,13 @@ export default function IndexPage() {
             </p>
           </div>
         </div>
-        <div className="bg-gray-50 mx-auto ">
+        <div className="bg-gray-50 dark:bg-slate-300  mx-auto ">
           <div className="mx-auto w-5/6 md:w-1/2 gap-3 grid grid-cols-1 pt-4 ">
             {data.map((item, index) => (
               <>
                 <Link href={item.hrefTo}>
                   <div
-                    className="grid grid-rows-3 grid-flow-col gap-1 border rounded-lg hover:shadow-xl"
+                    className="grid grid-rows-3 grid-flow-col gap-1 dark:bg-neutral-200 bg-neutral-100 rounded-lg hover:shadow-xl"
                     key={index}
                   >
                     <div className="relative w-28 md:w-32 lg:w-48 h-32 overflow-hidden  bg-fuchsia-300 rounded-lg row-span-3">
