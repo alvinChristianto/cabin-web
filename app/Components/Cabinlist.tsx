@@ -35,7 +35,7 @@ function CabinList(props: any) {
   return (
     <>
       <div>
-        <section className=" bg-white mx-auto pb-6">
+        <section className=" bg-white dark:bg-slate-300 mx-auto pb-6">
           <div className="flex justify-center">
             <div className="max-w-[700px] text-center mb-5">
               <h2 className="mb-6 mt-6 text-xl font-primary font-semibold text-slate-900">
@@ -51,7 +51,7 @@ function CabinList(props: any) {
             {data.map((item, index) => (
               <a href={item.hrefTo} key={index}>
                 <div
-                  className="rounded-lg shadow-lg bg-slate-200 hover:bg-slate-300 transition duration-100 delay-100"
+                  className="rounded-lg shadow-lg bg-slate-200 hover:bg-slate-300 overflow-hidden transition duration-100 delay-100"
                   key={index}
                 >
                   <Image

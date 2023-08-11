@@ -37,9 +37,9 @@ export default function AccordionFaq() {
         {data.map((item, index) => (
           <Accordion.Panel key={index}>
             <div >
-              <Accordion.Title className="text-primary font-semibold">{item.title}</Accordion.Title>
-              <Accordion.Content>
-                <p className="mb-2 text-gray-500 dark:text-slate-700">
+              <Accordion.Title className="text-primary dark:text-primary font-semibold">{item.title}</Accordion.Title>
+              <Accordion.Content className="dark:bg-slate-700">
+                <p className="mb-2 text-gray-700 dark:text-slate-200">
                   {item.content}
                 </p>
               </Accordion.Content>

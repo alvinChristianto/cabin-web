@@ -29,17 +29,17 @@ function Features(props: any) {
     },
   ];
   return (
-    <div>
-      <section className="mb-32">
+    <div className="bg-slate-300 dark:bg-slate-900">
+      <section className="">
         <div className="flex justify-center">
           <div className="max-w-[700px] text-center">
-            <h2 className="mb-6 mt-6 text-xl font-primary font-semibold">
+            <h2 className="mb-6 mt-6 text-xl font-primary font-semibold dark:text-white">
               Kenapa Memilih <br />{" "}
               <span className="text-primary text-3xl font-bold">
                 The Cabin Hotel
               </span>
             </h2>
-            <p className="mb-16 font-secondary text-neutral-500 dark:text-neutral-300">
+            <p className="mb-16 font-secondary text-neutral-800 dark:text-neutral-300">
               Tamu merupakan subyek utama yang ingin kami layani dengan
               maksimal. Kami siap menyambut anda di cabang-cabang The Cabin
               pilihan anda.
@@ -68,8 +68,8 @@ function Features(props: any) {
                   </svg>
                 </div>
                 <div className="ml-2 grow">
-                  <p className="mb-1 font-bold font-primary">{item.title}</p>
-                  <p className="font-secondary text-neutral-500 dark:text-neutral-300">
+                  <p className="mb-1 font-bold font-primary dark:text-white">{item.title}</p>
+                  <p className="font-secondary text-neutral-800 dark:text-neutral-300">
                     {item.description}
                   </p>
                 </div>

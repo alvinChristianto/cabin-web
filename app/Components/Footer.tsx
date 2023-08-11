@@ -9,11 +9,11 @@ import {
 function Footer(props: any) {
   return (
     <div>
-      <footer className="bg-slate-300 dark:bg-gray-900">
+      <footer className="bg-slate-300 dark:bg-slate-900">
         <div className="mx-auto w-full max-w-screen-xl">
           <div className="grid grid-cols-2 gap-8 px-8 py-6 lg:py-8 md:grid-cols-3">
             <div>
-              <h2 className="mb-2 text-2xl font-bold text-primary uppercase dark:text-white font-primary ">
+              <h2 className="mb-2 text-2xl font-bold text-primary uppercase font-primary ">
                 The Cabin Hotel
               </h2>
               <ul className="text-gray-900 dark:text-gray-500 font-medium">
