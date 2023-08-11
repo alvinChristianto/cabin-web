@@ -12,7 +12,7 @@ function Navbar(props: any) {
     { title: "About", linkTo: "/about" },
     { title: "Testimonial", linkTo: "/testimonials" },
     { title: "Blog", linkTo: "/blog" },
-    { title: "Promo", linkTo: "/promo" },
+    // { title: "Promo", linkTo: "/promo" },
   ];
 
   const ProfileMenuList = [
